@@ -1,0 +1,13 @@
+[Unit]
+Description=Test service
+After=remote-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/var/lib/test/test.sh
+RemainAfterExit=yes
+StandardOutput=journal+console
+StandardError=journal+console
+
+[Install]
+WantedBy=multi-user.target
